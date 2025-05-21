@@ -62,7 +62,7 @@ class ProductController extends Controller
         // Upload image (ถ้ามี)
         $imagePath = null;
         if ($request->hasFile('product_img')) {
-            $imagePath = $request->file('product_img')->store('uploads/product/', 'public');
+            $imagePath = $request->file('product_img')->store('uploads/product', 'public');
         }
 
         // Insert into DB using Query Builder
@@ -124,7 +124,7 @@ class ProductController extends Controller
             }
 
         //upload new image file
-            $imagePath = $request->file('product_img')->store('uploads/product/', 'public');
+            $imagePath = $request->file('product_img')->store('uploads/product', 'public');
 
         }else{
             $imagePath = $_POST['oldImg'];
